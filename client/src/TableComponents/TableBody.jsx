@@ -1,16 +1,17 @@
-const TableBody = ({ data, columns, styles }) => {
-    return (
-      <tbody style={{ background: styles.bodyBg, color: styles.bodyColor }}>
-        {data.map((row, index) => (
-          <tr key={index}>
-            {columns.map(({ key }) => (
-              <td key={key}>{row[key]}</td>
-            ))}
-          </tr>
-        ))}
-      </tbody>
-    );
-  };
-  
-  export default TableBody;
-  
+const TableBody = ({ data, columns }) => {
+  return (
+    <tbody className="table-body">
+      {data.map((row, index) => (
+        <tr key={index} className="table-row">
+          {columns.map(({ key }) => (
+            <td key={key} className="table-cell">
+              {row[key]}
+            </td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  );
+};
+
+export default TableBody;
